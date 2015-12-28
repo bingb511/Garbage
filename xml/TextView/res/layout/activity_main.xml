@@ -28,8 +28,7 @@
         android:id="@+id/textone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/t1"
-        android:text="@string/textone" />
+        android:layout_below="@id/t1" />
 
 
 </RelativeLayout>
