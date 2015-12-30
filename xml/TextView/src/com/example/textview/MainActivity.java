@@ -8,15 +8,20 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -90,6 +95,78 @@ public class MainActivity extends Activity {
 		        
 		//pro4 start
         
-		        
+        TextView tt1 = (TextView)findViewById(R.id.tt1);
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<20; i++){
+        	sb.append("好友" + i + ", ");
+        }
+        String likeUsers = sb.substring(0, sb.lastIndexOf(", ")).toString();
+        //TextView可以上下滑动//setMovementMethod上下滑动
+        //LinkMovementMethod它实现了一系列的方法，比如它的onKeyDown调用ClickableSpan的onClick, URLSpan实现了ClickableSpan ,用户点击一个url的话，就会调用LinkMovementMethod::onKeyDown， 继而调用URLSpan的onClick
+        //对于抽象类，要想对其实例化，只能用getInstance方法，是不能new出来的
+        tt1.setMovementMethod(LinkMovementMethod.getInstance());
+        //setText将tt1对象的现实内容设置为
+        //TextView.BufferType并不是TextView的内部类，是一个枚举类型,SPANNAABLE则用于设置如TextView
+        tt1.setText(addClickPart1(likeUsers), TextView.BufferType.SPANNABLE);
+      //定义一个点击每个部分文字的处理方法SpannableStringBuilder通常用于显示文字，有时候也可以夹杂着图片，比如qq中有人的名称中有文字夹杂着图片的昵称
+        //一些控件，变量。我都会声明为private
 	}
+        SpannableStringBuilder addClickPart1(String str){
+        	//导入图片资源
+        	//要让图片替代指定的文字就要用ImageSpan
+        	//ImageSpan(Context context, int resourceId) 
+        	ImageSpan imgspan1 = new ImageSpan(MainActivity.this,R.drawable.icon);
+        	//需要处理的文本，p.是需要被替代的文本 
+        	SpannableString spanStr = new SpannableString("p.");
+        	//开始替换
+        	spanStr.setSpan(imgspan1,0,1,Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        	//创建一个SpannableStringBuilder对象，连接多个字符串
+        	SpannableStringBuilder ssb = new SpannableStringBuilder(spanStr);
+        	ssb.append(str);
+        	//定义一个数组
+        	String[] likeUsers1 = str.split(", ");
+        	//
+        	if(likeUsers1.length > 0 ){
+        		for(int i = 0; i < likeUsers1.length; i++){
+        			final String name = likeUsers1[i];
+        			final int start = str.indexOf(name) + spanStr.length();
+        			ssb.setSpan(new ClickableSpan(){
+        				public void onClick(View widget){
+        					//Toast是为了友好的提醒用户的提示框，MainActivity.this表示在MainActivity里面显示，LENGTH_SHORT表示Toast的显示时间，这里调用的时间是系统定义好的时间，.show是将定义好的Toast显示出来。
+        					Toast.makeText(MainActivity.this,name,Toast.LENGTH_SHORT).show();
+        				}
+        				public void updateDrawState(TextPaint ds){
+        					//super调用父类的方法或者属性
+        					super.updateDrawState(ds);
+        					//删除下划线，设置字体颜色为蓝色
+        					ds.setColor(Color.BLUE);
+        					ds.setUnderlineText(false);
+        				}
+        			},start,start + name.length(),0);
+        		}
+        	}
+        	
+        	return ssb.append("等" + likeUsers1.length + "个人觉得很赞");
+        }
+/*        
+ * spannable对象实现对文本进行的各种特别的设置比如颜色，大小等效果；
+ * 构建spannable：
+ * Spannable spn = new SpannableString("字符串");
+ * 或者
+ * SpannableStringBuilder对象来进行构建。
+ * 构建好了，就可以设置样式：
+ * spannable.setSpan(Obj what,int start,int end,int flags);
+ *  参数what是具体样式的实现对象，start则是该样式开始的位置，end对应的是样式结束的位置，参数flags，定义在Spannable中的常量，常用的有：
+ *  Spanned.SPAN_EXCLUSIVE_EXCLUSIVE --- 不包含两端start和end所在的端点              (a,b)
+ *  Spanned.SPAN_EXCLUSIVE_INCLUSIVE --- 不包含端start，但包含end所在的端点       (a,b]
+ *  Spanned.SPAN_INCLUSIVE_EXCLUSIVE --- 包含两端start，但不包含end所在的端点   [a,b)
+ *  Spanned.SPAN_INCLUSIVE_INCLUSIVE--- 包含两端start和end所在的端点                     [a,b]
+ *  但实际测试这其中似乎并未有差别，而在start和end相同的情况下，则只对start所在字符的当前行起作用。
+ *  }
+*/      
+        //pro4 end
+        
+
+
 }

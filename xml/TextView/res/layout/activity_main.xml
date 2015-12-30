@@ -28,7 +28,29 @@
         android:id="@+id/textone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/t1" />
+        android:layout_below="@id/t1"
+        android:layout_marginTop="50dp" />
 
+    <TextView
+        android:id="@+id/tt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textone"
+        android:layout_marginTop="50dp"
+        android:text="@string/tt1" />
+
+    <TextView
+        android:id="@+id/tt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/keyigundong"
+        android:textSize="16sp"
+        android:layout_below="@id/tt1"
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>

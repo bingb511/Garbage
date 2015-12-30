@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     
     <string name="text1">text123test</string>
+    <string name="tt1">StringBuilder</string>
+    <string name="keyigundong">可以滚动的文字效果，可以滚动的文字效果，如果屏幕不够的的，单独一行显示，并且可以获得触摸焦点的滚动文字。</string>
 
 </resources>

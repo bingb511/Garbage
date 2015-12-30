@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EditText</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+   	
+    <string name="hehe">呵呵</string>
+    
+    <string name="t1">t1</string>
+    <string name="t2">t2</string>
+    <string name="t3">t3</string>
+    <string name="t4">t4</string>
+    <string name="t5">t5</string>
+    <string name="t6">t6</string>
+    <string name="t7">t7</string>
+    <string name="t8">t8</string>
+    <string name="t9">t9</string>
+    <string name="t10">t10</string>
+    <string name="t11">t11</string>
+    <string name="t12">t12</string>
+    <string name="t13">t13</string>
+    <string name="t14">t14</string>
+    <string name="t15">t15</string>
+    <string name="t16">t16</string>
+    <string name="t17">t17</string>
+    <string name="t18">t18</string>
+    <string name="t19">t19</string>
+    <string name="t20">t20</string>
+    <string name="t21">t21</string>
+    <string name="t22">t22</string>
+    <string name="t23">t23</string>
+    <string name="t24">t24</string>
+    <string name="t25">t25</string>
+    <string name="t26">t26</string>
+    <string name="t27">t27</string>
+    <string name="t28">t28</string>
+    
+    
+
+</resources>
