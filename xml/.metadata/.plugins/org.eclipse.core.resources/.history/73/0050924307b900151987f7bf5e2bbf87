@@ -1,0 +1,38 @@
+package com.example.togglebutton;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener{
+
+    private ToggleButton tbtn_open;
+    private Switch swh_status;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tbtn_open = (ToggleButton) findViewById(R.id.tbtn_open);
+        swh_status = (Switch) findViewById(R.id.swh_status);
+        tbtn_open.setOnCheckedChangeListener(this);
+        swh_status.setOnCheckedChangeListener(this);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        switch (compoundButton.getId()){
+            case R.id.tbtn_open:
+                if(compoundButton.isChecked()) Toast.makeText(this,"打开声音",Toast.LENGTH_SHORT).show();
+                else Toast.makeText(this,"打开声音",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.swh_status:
+                if(compoundButton.isChecked()) Toast.makeText(this,"开关:ON",Toast.LENGTH_SHORT).show();
+                else Toast.makeText(this,"开关:OFF",Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">radioButton</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="t1">请选择性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+</resources>

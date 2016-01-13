@@ -1,0 +1,27 @@
+package com.example.radiobutton;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		RadioGroup radio = (RadioGroup)findViewById(R.id.rg);
+		radio.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+			public void onCheckedChanged(RadioGroup group,int checkedId){
+				RadioButton btn = (RadioButton)findViewById(checkedId);
+				btn.makeText()
+				
+			}
+		} );
+	}
+
+	
+}

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+<LinearLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="@string/hello_world"
+        android:textColor="#ff0000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/e1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hello_world"
+        android:selectAllOnFocus="true" />
+
+    <EditText
+        android:id="@+id/e2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hehe" />
+
+    <EditText
+        android:id="@+id/e3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:hint="@string/t1"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/e4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/t2"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapCharacters"
+        android:hint="@string/t3"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:hint="@string/t4"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapSentences"
+        android:hint="@string/t5"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textAutoCorrect"
+        android:hint="@string/t6"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textAutoComplete"
+        android:hint="@string/t7"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="@string/t8"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/t9"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:hint="@string/t10"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="@string/t11"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailSubject"
+        android:hint="@string/t12"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textShortMessage"
+        android:hint="@string/t13"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textLongMessage"
+        android:hint="@string/t14"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/t15"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/e18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="@string/t16"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/t17"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:hint="@string/t18"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textWebEditText"
+        android:hint="@string/t19"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textFilter"
+        android:hint="@string/t21" />
+
+    <EditText
+        android:id="@+id/e23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPhonetic"
+        android:hint="@string/t21"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/t22"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:hint="@string/t23"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/t24"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="@string/t25"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="datetime"
+        android:hint="@string/t26"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:hint="@string/t27"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/e30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:hint="@string/t28"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
+</ScrollView>

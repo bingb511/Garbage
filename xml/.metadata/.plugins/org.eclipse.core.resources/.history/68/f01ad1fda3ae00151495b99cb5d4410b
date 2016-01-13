@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.textview.MainActivity" >
+
+    <TextView
+        android:id="@+id/Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableBottom="@drawable/ic_launcher"
+        android:drawableEnd="@drawable/ic_launcher"
+        android:drawableLeft="@drawable/ic_launcher"
+        android:drawableRight="@drawable/ic_launcher"
+        android:drawableStart="@drawable/ic_launcher"
+        android:drawableTop="@drawable/ic_launcher"
+        android:text="@string/hello_world" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Hello"
+        android:layout_marginTop="50dp"
+        android:text="@string/text1" />
+
+    <TextView
+        android:id="@+id/textone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t1"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:id="@+id/tt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textone"
+        android:layout_marginTop="50dp"
+        android:text="@string/tt1" />
+
+    <TextView
+        android:id="@+id/tt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/keyigundong"
+        android:textSize="16sp"
+        android:singleLine="true" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:focusable="true" android:focusableInTouchMode="true" />"
+
+</RelativeLayout>

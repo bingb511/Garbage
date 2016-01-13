@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.text.Html"/>
+<fullyQualifiedTypeName name="android.text.Html.ImageGetter"/>
+<fullyQualifiedTypeName name="java.text.DateFormat.Field"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="android.graphics.Typeface"/>
+<fullyQualifiedTypeName name="com.example.textview.R.id"/>
+<fullyQualifiedTypeName name="com.example.edittext.R.id"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.example.edt2.R.id"/>
+<fullyQualifiedTypeName name="com.example.button.R.id"/>
+</qualifiedTypeNameHistroy>

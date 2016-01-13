@@ -1,0 +1,30 @@
+package com.example.progress;
+
+import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class MainActivity extends Activity {
+	
+	private ImageView img_pgbar;
+	AnimationDrawable anim;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		img_pgbar = (ImageView) findViewById(R.id.img_pgbar);
+		anim = (AnimationDrawable) img_pgbar.getBackground();
+		Runnable runnable=new Runnable(){  
+		   @Override  
+		   public void run() {    
+		    //要做的事情，这里再次调用此Runnable对象，以实现每两秒实现一次的定时器操作  
+			img_pgbar.postDelayed(this, 100);  
+		   }   
+		};  
+		img_pgbar.postDelayed(runnable, 100);
+		img_pgbar.removeCallbacks(runnable);
+	}
+}

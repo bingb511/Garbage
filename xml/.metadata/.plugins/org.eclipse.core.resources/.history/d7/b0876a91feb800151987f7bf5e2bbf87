@@ -1,0 +1,38 @@
+package com.example.checkbox;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+
+public class MainActivity extends Activity {
+	
+	
+	private CheckBox cb_one;
+	private CheckBox cb_two;
+	private CheckBox cb_three;
+	private Button btn;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		cb_one = (CheckBox)findViewById(R.id.cb_one);
+		cb_two = (CheckBox)findViewById(R.id.cb_two);
+		cb_three = (CheckBox)findViewById(R.id.cb_three);
+		btn = (Button)findViewById(R.id.btn);
+		
+	    cb_one.setOnCheckedChangeListener((OnCheckedChangeListener) this);
+	    cb_two.setOnCheckedChangeListener((OnCheckedChangeListener) this);
+	    cb_three.setOnCheckedChangeListener((OnCheckedChangeListener) this);
+	    btn.setOnClickListener(this);
+	    
+	    
+		
+		
+	}
+
+	
+}
