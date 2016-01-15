@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLay xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/calendar_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@ +id/calHeader"
+        layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:="" >
+
+        <ImageView
+            android:id="@ +id/ivLogo"
+            android:layout_width="@dimen/logo_size"
+            layout_height="@dimen/logo_size"
+            android:layout_margin="@dimen/margin"
+            src="@drawable/calendar_bak"
+            android:=""
+            android:="" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout_toRightOf="@id/ivLogo"
+            android:layout_marginTop="@dimen/margin"
+            android:=""
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@ +id/tvMsg1"
+                layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:=""
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@ +id/tvMsg2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@ +id/tvMsg3"
+                layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:=""
+                android:textColor="@color/text_color" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout>
+    </LinearLayout>

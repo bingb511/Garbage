@@ -1,0 +1,87 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<LinearLay xmlns:android=""
+    android:layout_width=" "
+    android:layout_height="fill_parent"
+    android=""
+    apk=""
+    com=""
+    fill_parent=""
+    out=""
+    res=""
+    schemas.android.=""
+    vertical=""
+    android:background=" @color/calendar_background"
+    android:orientation=" "
+    http:="" >
+
+    <RelativeLayout
+        id=""
+        android:id=" "
+        layout_width="fill_parent"
+        android:layout_height="70dp"
+        calHeader=""
+        android:="" >
+ 
+
+        <ImageView
+            id=""
+            android:id=" "
+            android:layout_width="@dimen/logo_size"
+            layout_height="@dimen/logo_size"
+            android:layout_margin="@dimen/margin"
+            ivLogo=""
+            src="@drawable/calendar_bak"
+            android:=""
+            android:="" />
+ 
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height=" "
+            layout_toRightOf="@id/ivLogo"
+            android:layout_marginTop=" "
+            dimen=""
+            margin=""
+            wrap_content=""
+            android:=""
+            android:orientation="vertical" >
+ 
+
+            <TextView
+                id=""
+                android:id=" "
+                layout_width="fill_parent"
+                android:layout_height=" "
+                tvMsg1=""
+                wrap_content=""
+                android:=""
+                android:textColor="@color/text_color" />
+ 
+
+            <TextView
+                id=""
+                android:id=" "
+                android:layout_width="fill_parent"
+                android:layout_height=" "
+                tvMsg2=""
+                wrap_content=""
+                android:textColor="@color/text_color" />
+ 
+
+            <TextView
+                id=""
+                android:id=" "
+                layout_width="fill_parent"
+                android:layout_height=" "
+                tvMsg3=""
+                wrap_content=""
+                android:=""
+                android:textColor="@color/text_color" />
+ 
+        </LinearLayout>
+ 
+    </RelativeLayout>
+ 
+
+    <LinearLayout>
+    </LinearLayout>

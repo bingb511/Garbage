@@ -1,0 +1,5 @@
+package com.servlet.login;
+
+public class LoginAction {
+
+}

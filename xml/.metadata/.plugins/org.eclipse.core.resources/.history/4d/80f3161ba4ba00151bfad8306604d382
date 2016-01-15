@@ -1,0 +1,195 @@
+package com.android.taxi;
+
+//import net.youmi.android.AdManager;
+//import net.youmi.android.banner.AdSize;
+//import net.youmi.android.banner.AdView;
+
+import java.util.HashMap;
+import java.util.Map;
+import com.android.taxi.R;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+//import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+@SuppressLint("HandlerLeak")
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        // e2d468f618be14b5和4955a15c0ddb7c5b位置填写你的发布ID和应用密钥
+        //AdManager.init(this,"e2d468f618be14b5", "4955a15c0ddb7c5b", 30, false);
+        
+        setContentView(R.layout.activity_main);
+        
+        ///< 初始化Layout控件，便于加载广告视图
+        //layout = new LinearLayout(LoginActivity.this); 
+        //layout.setOrientation(LinearLayout.VERTICAL); 
+
+        ///< 初始化广告视图
+        //AdView adView = new AdView(LoginActivity.this, AdSize.SIZE_320x50); 
+        //LayoutParams params = new LayoutParams(LayoutParams.FILL_PARENT, 
+                //LayoutParams.WRAP_CONTENT); 
+        //layout.addView(adView, params);
+
+        findViews();
+        setListeners();
+    }
+    
+    public void findViews()
+    {
+        button_login = (Button)findViewById(R.id.login);
+        user_name = (EditText)findViewById(R.id.user_name);
+        password = (EditText)findViewById(R.id.password);
+    }
+    
+    public void setListeners()
+    {
+        button_login.setOnClickListener(loginTest);
+    }
+    
+    private Button.OnClickListener loginTest = new Button.OnClickListener()
+    {
+        @SuppressLint("NewApi")
+        @Override
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            String userName = null;
+            String passWord = null;
+            
+            ///< 简单判断用户是否输入用户名，是否输入密码
+            if ((userName = user_name.getText().toString()).isEmpty())
+            {
+                if (password.getText().toString().isEmpty())
+                {
+                    Toast.makeText(MainActivity.this, "请输入用户名和密码", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(MainActivity.this, "请输入用户名！", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            else if ((passWord = password.getText().toString()).isEmpty())
+            {
+                Toast.makeText(MainActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            
+            loginHandle(userName, passWord);
+            
+            //            ///< 发送用户名和密码到服务器进行校验，并获得服务器返回值
+            //            Map<String, String> params = new HashMap<String, String>();
+            //            params.put("user_name", userName);
+            //            params.put("password", passWord);
+            //            String encode = "utf-8";
+            //            
+            //            //            Toast.makeText(LoginActivity.this, params.get("user_name"), Toast.LENGTH_SHORT).show();
+            //            //            Toast.makeText(LoginActivity.this, params.get("password"), Toast.LENGTH_SHORT).show();
+            //
+            //            int responseCode = HttpUtils.sendMessage(params, encode);
+            //            if (0 == responseCode)
+            //            {
+            //                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+            //            }
+            //            else if (1 == responseCode)
+            //            {
+            //                Toast.makeText(LoginActivity.this, "用户名错误!", Toast.LENGTH_SHORT).show();
+            //            }
+            //            else if (2 == responseCode)
+            //            {
+            //                Toast.makeText(LoginActivity.this, "密码错误!", Toast.LENGTH_SHORT).show();
+            //            }
+            //            else
+            //            {
+            //                Toast.makeText(LoginActivity.this, "异常!", Toast.LENGTH_SHORT).show();
+            //            }
+                        
+            //            ///< 发送用户名和密码到服务器进行校验，并获得服务器返回值
+            //            // TODO
+            //            if (userName.equals("admin") && passWord.equals("123"))
+            //            {
+            //                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+            //            }
+            //            else
+            //            {
+            //                Toast.makeText(LoginActivity.this, "请核对用户信息！", Toast.LENGTH_SHORT).show();
+            //            }
+        }
+
+    };
+    
+    public void loginHandle(final String userName, final String password)
+    {
+        new Thread(new Runnable() 
+        {
+            @Override
+            public void run() 
+            {
+                ///< 发送用户名和密码到服务器进行校验，并获得服务器返回值
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("user_name", userName);
+                params.put("password", password);
+                String encode = "utf-8";
+                
+                //            Toast.makeText(LoginActivity.this, params.get("user_name"), Toast.LENGTH_SHORT).show();
+                //            Toast.makeText(LoginActivity.this, params.get("password"), Toast.LENGTH_SHORT).show();
+
+                int responseCode = HttpUtils.sendMessage(params, encode);
+                Looper.prepare(); 
+                if (0 == responseCode)
+                {
+                    Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                }
+                else if (1 == responseCode)
+                {
+                    Toast.makeText(MainActivity.this, "用户名错误!", Toast.LENGTH_SHORT).show();
+                }
+                else if (2 == responseCode)
+                {
+                    Toast.makeText(MainActivity.this, "密码错误!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "异常!", Toast.LENGTH_SHORT).show();
+                }
+                Looper.loop();
+                
+                //执行完毕后给handler发送一个空消息 
+                handler.sendEmptyMessage(0); 
+            }
+        }).start();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+    //定义Handler对象 
+    private Handler handler =new Handler(){ 
+        @Override 
+        //当有消息发送出来的时候就执行Handler的这个方法 
+        public void handleMessage(Message msg){ 
+            super.handleMessage(msg); 
+            // TODO 处理UI 
+        }
+    };
+        
+    private Button button_login;
+    private EditText user_name;
+    private EditText password;
+    
+    LinearLayout layout;
+}

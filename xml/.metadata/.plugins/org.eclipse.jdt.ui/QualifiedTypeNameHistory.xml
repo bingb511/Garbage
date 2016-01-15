@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="com.example.edt2.R.id"/>
 <fullyQualifiedTypeName name="com.example.button.R.id"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.example.taxi.HttpUtils"/>
 </qualifiedTypeNameHistroy>

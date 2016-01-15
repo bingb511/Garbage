@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;http&apos; to &apos;taxi/src&apos;&#x0D;&#x0A;- Original project: &apos;HttpServlet&apos;&#x0D;&#x0A;- Destination element: &apos;taxi/src&apos;&#x0D;&#x0A;- Original element: &apos;HttpServlet/src/http&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=taxi/src" element1="/src&lt;http" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1452763227213" version="1.0"/>
+</session>

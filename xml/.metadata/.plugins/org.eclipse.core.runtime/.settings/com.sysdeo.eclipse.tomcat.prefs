@@ -1,0 +1,9 @@
+computeSourcePath=true
+contextsDir=D\:\\Program Files\\Apache Software Foundation\\Tomcat 8.0\\conf\\Catalina\\localhost
+eclipse.preferences.version=1
+managerUrl=http\://localhost\:8080/manager
+projectsInSourcePath=Absolute;Button;EDT2;EditText;EdtiTextWithDel;Frame;Frame2;MainActivity;TextView;android-support-v7-appcompat;appcompat_v7;checkbox;hello;login-demo;progress;radioButton;table;toggleButton;
+tomcatConfigFile=D\:\\Program Files\\Apache Software Foundation\\Tomcat 8.0\\conf\\server.xml
+tomcatDir=D\:\\Program Files\\Apache Software Foundation\\Tomcat 8.0
+tomcatJRE=1450927143024
+tomcatVersion=tomcatV7

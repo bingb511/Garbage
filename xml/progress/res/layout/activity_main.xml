@@ -42,19 +42,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="开始" />
+        android:text="@string/start" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="结束" />
+        android:text="@string/end" />
 
     <ImageView
         android:id="@+id/img_pgbar"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@anim/amin_pgbar" />
+        android:background="@anim/amin_pgbar"
+        android:contentDescription="@anim/amin_pgbar" />
 
 </LinearLayout>
