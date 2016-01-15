@@ -12387,3 +12387,9 @@ com.android.ddmlib.ShellCommandUnresponsiveException
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2016-01-15 10:32:04.047
 !MESSAGE No projects found for [E:\Android\Garbage\xml\TaxiServlet\WEB-INF\web.xml]
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2016-01-15 10:40:02.470
+!MESSAGE No valid Android XML Editor Delegate found for file /TaxiServlet/WEB-INF/web.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2016-01-15 10:40:05.278
+!MESSAGE No projects found for [E:\Android\Garbage\xml\TaxiServlet\WEB-INF\web.xml]

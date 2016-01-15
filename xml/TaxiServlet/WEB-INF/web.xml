@@ -4,7 +4,7 @@
 <web-app>
     <servlet>
         <servlet-name>login</servlet-name>    <!-- 名字随便 -->
-        <servlet-class>com.servlet.main.MainAction</servlet-class>    <!-- servlet类名-->
+        <servlet-class>com.servlet.login.LoginAction</servlet-class>    <!-- servlet类名-->
     </servlet>
 
     <servlet-mapping>

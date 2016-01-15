@@ -14,7 +14,7 @@ import java.util.Map;
 @SuppressWarnings("unused")
 public class HttpUtils {
     ///< ÇëÇó·þÎñURL
-    private final static String PATH = "http://127.0.0.1:8080/TaxiServlet/login";
+    private final static String PATH = "http://127.0.0.1:8000/TaxiServlet/login";
     private static URL url; 
     
     public HttpUtils() {
