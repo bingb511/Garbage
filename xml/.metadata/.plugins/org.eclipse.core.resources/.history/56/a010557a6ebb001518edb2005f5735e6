@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context="com.example.bingb511.MainActivity" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginStart="10dip"
+        android:layout_marginTop="10dip"
+        android:contentDescription="@drawable/version"
+        android:src="@drawable/version" >
+    </ImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <ImageView
+            android:id="@+id/monkey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="92dp"
+            android:contentDescription="@drawable/monkey"
+            android:src="@drawable/monkey">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/monkey"
+            android:layout_marginTop="5dip"
+            android:contentDescription="@drawable/me"
+            android:src="@drawable/me"
+            android:layout_centerInParent="true" >
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/author"
+            android:layout_marginRight="10dip"
+            android:layout_marginEnd="10dip"
+            android:layout_marginBottom="10dip"
+            android:contentDescription="@drawable/author">
+        </ImageView>
+
+        
+        
+    </RelativeLayout>
+
+</LinearLayout>

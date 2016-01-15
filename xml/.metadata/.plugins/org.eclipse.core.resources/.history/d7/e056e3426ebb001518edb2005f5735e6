@@ -1,0 +1,51 @@
+package com.example.bingb511;
+
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+import android.view.Display;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.WindowManager;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	//获取屏幕方向
+	public static void ScreenOrient(Activity activity){
+		int orient = activity.getRequestedOrientation();
+		if(orient != ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE && orient != ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT){
+			//宽>高为横屏,反正为竖屏  
+			WindowManager windowManager = activity.getWindowManager();
+			Display display = windowManager.getDefaultDisplay();
+			int screenWidth = display.getWidth();
+			int screenHeight = display.getHeight();
+			orient = screenWidth < screenHeight ? ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+		}
+		return orient;
+	}
+}
