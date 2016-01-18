@@ -1,8 +1,12 @@
 package com.example.bingb511;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +27,17 @@ public class MainActivity extends Activity {
 		LinearLayout layout=(LinearLayout)findViewById(R.id.layout);
 		//背景自动适应
 		MainActivity.AutoBackground(this, layout, R.drawable.bg_v, R.drawable.bg_h);
+		
+		Timer timer = new Timer(); //timer中有一个线程,这个线程不断执行task
+		final Intent intent = new Intent();
+		intent.setClass(MainActivity.this, PassActivity.class);  
+		TimerTask task = new TimerTask(){ //timertask实现runnable接口,TimerTask类就代表一个在指定时间内执行的task
+			public void run(){
+				startActivity(intent);  
+			}
+		};
+		timer.schedule(task,1000*2);
+		
 	}
 
 	@Override
