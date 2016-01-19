@@ -1,0 +1,51 @@
+package com.example.bingb511;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
+
+public class PassActivity extends Activity {
+	
+	EditText edit1,edit2,edit3,edit4;
+	String s1,s2,s3,s4;
+	
+	@SuppressLint("ShowToast")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_pass);
+		
+		edit1 = (EditText)findViewById(R.id.edit1);
+		edit2 = (EditText)findViewById(R.id.edit2);
+		edit3 = (EditText)findViewById(R.id.edit3);
+		edit4 = (EditText)findViewById(R.id.edit4);
+		
+		s1 = edit1.getText().toString();
+		s2 = edit2.getText().toString();
+		s3 = edit3.getText().toString();
+		s4 = edit4.getText().toString();
+		
+		edit1.addTextChangedListener(new TextWatcher(){
+			public void onTextChanged(CharSequence text,int start,int before,int count){
+				
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+	
+	}
+}

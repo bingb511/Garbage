@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="55dip"
+    android:background="@drawable/title_blue" >
+   
+    <Button
+        android:id="@+id/nav_leftButton"
+        android:layout_width="60dip"
+        android:layout_height="45dip"
+        android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+          
+        android:text="@string/return"
+        android:textSize="16sp" />
+   
+    <TextView
+        android:id="@+id/nav_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/nav_leftButton"
+         android:layout_toEndOf="@id/nav_leftButton" 
+        android:text="验证"
+        android:textSize="20sp" />
+   
+   
+    <Button
+        android:id="@+id/nav_rightButton"
+        android:layout_width="60dip"
+        android:layout_height="45dip"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dip"
+           
+        android:layout_alignParentRight="true"
+        android:text="退出"
+        android:textSize="16sp" />
+   
+</RelativeLayout>

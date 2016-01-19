@@ -1,0 +1,51 @@
+package com.example.bingb511;
+
+import android.app.Dialog;
+import android.app.TabActivity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.widget.TabHost;
+import android.widget.TabHost.OnTabChangeListener;
+
+@SuppressWarnings("deprecation")
+public class IndexActivity extends TabActivity {
+
+	private TabHost tabHost;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+
+		tabHost = getTabHost();
+		addTab(); // 添加标签
+		tabHost.setBackgroundColor(Color.argb(150, 20, 80, 150)); // 设置tabhost的颜色
+		tabHost.setBackgroundResource(R.drawable.bg_h); // 设置tabhost的背景图片
+		tabHost.setCurrentTab(0);// 默认显示哪一个标签
+
+		tabHost.setOnTabChangedListener(new OnTabChangeListener() {
+			@Override
+			public void onTabChanged(String tabId) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(IndexActivity.this);
+				Dialog dia;
+				builder.setTitle("提示");
+				builder.setMessage("当前选中了" + tabId + "标签");
+				
+				dia = builder.create();
+				dia.show();
+			}
+		});
+	}
+
+	private void addTab() {
+		// setIndicator()此方法用来设置标签和图表
+		// 指定内容为一个TextView --->public TabHost.TabSpec setContent(int viewId)
+		// 此方法需要一个 viewId 作为参数
+		tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("日历记事", getResources().getDrawable(R.drawable.version))
+				.setContent(R.id.tab1));
+		tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("资料备份", getResources().getDrawable(R.drawable.version))
+				.setContent(R.id.tab2));
+		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("压缩图片", getResources().getDrawable(R.drawable.version))
+				.setContent(R.id.tab3));
+	}
+}

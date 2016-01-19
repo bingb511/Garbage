@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="20dip" >
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_weight="1"
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:inputType="textPassword"
+        android:layout_marginRight="10dip"
+        android:layout_marginEnd="10dip"
+        android:padding="5dip"
+        android:textAlign="center"
+        android:background="@drawable/edit_bg" />
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_weight="1"
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginEnd="10dip"
+        android:padding="5dip"
+        android:textAlign="center"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_bg" />
+    <EditText
+        android:id="@+id/edit3"
+        android:layout_weight="1"
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginEnd="10dip"
+        android:padding="5dip"
+        android:textAlign="center"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_bg" />
+    <EditText
+        android:id="@+id/edit4"
+        android:layout_weight="1"
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginEnd="10dip"
+        android:padding="5dip"
+        android:textAlign="center"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_bg" />
+
+</LinearLayout>

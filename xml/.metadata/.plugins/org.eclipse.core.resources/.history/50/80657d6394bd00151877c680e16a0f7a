@@ -1,0 +1,16 @@
+//获取账号列表
+        dbHelper=new DataHelper(this);
+        List<UserInfo> userList= dbHelper.GetUserList(true);
+        if(userList.isEmpty())//如果为空说明第一次使用跳到AuthorizeActivity页面进行OAuth认证
+        {
+               Intent intent = new Intent();
+               intent.setClass(MainActivity.this, AuthorizeActivity.class);
+               startActivity(intent);
+        }
+        else//如果不为空读取这些记录的UserID号、Access Token、Access Secret值
+            //然后根据这3个值调用新浪的api接口获取这些记录对应的用户昵称和用户头像图标等信息。
+        {
+               for(UserInfo user:userList){
+                  ......
+               }
+        }

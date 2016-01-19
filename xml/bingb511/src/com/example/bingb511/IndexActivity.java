@@ -1,0 +1,37 @@
+package com.example.bingb511;
+
+import android.app.TabActivity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.widget.TabHost;
+
+@SuppressWarnings("deprecation")
+public class IndexActivity extends TabActivity {
+
+	private TabHost tabHost;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+
+		tabHost = getTabHost();// 从TabActivity上面获取放置Tab的TabHost
+		addTab(); // 添加标签
+		tabHost.setBackgroundColor(Color.argb(255, 255, 255, 1)); // 设置tabhost的颜色
+		tabHost.setBackgroundResource(R.drawable.bg_h); // 设置tabhost的背景图片
+	}
+
+	private void addTab() {
+		// setIndicator()此方法用来设置标签和图表
+		// 指定内容为一个TextView --->public TabHost.TabSpec setContent(int viewId)
+		// 此方法需要一个 viewId 作为参数
+		// newTabSpec创建新标签one
+		// setIndicator设置标签标题
+		// setContent设置该标签的布局内容
+		tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("日历记事", getResources().getDrawable(R.drawable.version))
+				.setContent(R.id.tab1));
+		tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("资料备份", getResources().getDrawable(R.drawable.version))
+				.setContent(R.id.tab2));
+		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("压缩图片", getResources().getDrawable(R.drawable.version))
+				.setContent(R.id.tab3));
+	}
+}

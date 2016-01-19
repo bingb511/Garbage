@@ -1,0 +1,25 @@
+package com.example.bingb511;
+
+import android.graphics.drawable.Drawable;
+
+public interface UserInfo {
+
+	String USERNAME = null;
+	String USERICON = null;
+	String USERID = null;
+	String TOKEN = null;
+	String TOKENSECRET = null;
+	String ID = null;
+	String getUserId();
+	String getToken();
+	void setId1(String string);
+	void setUserId(String string);
+	void setToken(String string);
+	void setId(String string);
+	void setUserName(String string);
+	void setUserIcon(Drawable icon);
+	void setTokenSecret(String string);
+	void setId(String string);
+	void setId(String string);
+
+}

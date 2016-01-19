@@ -4,5 +4,12 @@
     <string name="app_name">bingb511</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="tab1">日历记事</string>
+    <string name="tab2">资料备份</string>
+    <string name="tab3">压缩图片</string>
+    
+    
+
 
 </resources>

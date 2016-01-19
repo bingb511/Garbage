@@ -1,0 +1,91 @@
+package com.example.bingb511;
+
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.Display;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+
+public class MainActivity extends Activity {
+
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		LinearLayout layout=(LinearLayout)findViewById(R.id.layout);
+		//背景自动适应
+		MainActivity.AutoBackground(this, layout, R.drawable.bg_v, R.drawable.bg_h);
+		
+		//获取账号列表
+        dbHelper=new DataHelper(this);
+        List<UserInfo> userList= dbHelper.GetUserList(true);
+        if(userList.isEmpty())//如果为空说明第一次使用跳到AuthorizeActivity页面进行OAuth认证
+        {
+               Intent intent = new Intent();
+               intent.setClass(MainActivity.this, AuthorizeActivity.class);
+               startActivity(intent);
+        }
+        else//如果不为空读取这些记录的UserID号、Access Token、Access Secret值
+            //然后根据这3个值调用新浪的api接口获取这些记录对应的用户昵称和用户头像图标等信息。
+        {
+               for(UserInfo user:userList){
+                  ......
+               }
+        }
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	//获取屏幕方向
+
+	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
+	@SuppressLint("InlinedApi")
+	public static int ScreenOrient(Activity activity){
+		int orient = activity.getRequestedOrientation();
+		if(orient != ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE && orient != ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT){
+			//宽>高为横屏,反正为竖屏  
+			WindowManager windowManager = activity.getWindowManager();
+			Display display = windowManager.getDefaultDisplay();
+			@SuppressWarnings("deprecation")
+			int screenWidth = display.getWidth();
+			@SuppressWarnings("deprecation")
+			int screenHeight = display.getHeight();
+			orient = screenWidth < screenHeight ? ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+		}
+		return orient;
+	}
+	
+	public static void AutoBackground(Activity activity, View view, int Background_v, int Background_h){
+		int orient = ScreenOrient(activity);
+		if (orient == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) { //纵向 
+            view.setBackgroundResource(Background_v);
+        }else{ //横向
+            view.setBackgroundResource(Background_h);
+        }
+	}
+}

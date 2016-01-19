@@ -1,0 +1,8 @@
+package com.example.bingb511;
+
+public interface UserInfo {
+
+	String USERNAME = null;
+	String USERICON = null;
+
+}

@@ -1,0 +1,18 @@
+package com.example.bingb511;
+
+import android.database.sqlite.SQLiteDatabase;
+
+public class DataHelper {
+	//数据库名称
+	private static String DB_NAME = "mysinaweibo.db";
+	//数据库版本
+	private static int DB_VERSION = 2;
+	private SQLiteDatabase db;
+	private SqliteHelper dbHelper;
+	
+	public DataHelper(Context context){
+		dbHelper = new SqliteHelper(context,DB_NAME,null,DB_VERSION);
+		db = dbHelper.getWritableDatabase();
+	}
+
+}

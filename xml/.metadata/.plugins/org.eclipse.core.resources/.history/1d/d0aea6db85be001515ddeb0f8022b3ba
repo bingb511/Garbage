@@ -1,0 +1,13 @@
+package com.example.bingb511;
+
+import android.widget.TabHost.OnTabChangeListener;
+
+public class OnTabChangedListener implements OnTabChangeListener {
+
+	@Override
+	public void onTabChanged(String tabId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

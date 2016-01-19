@@ -1,0 +1,73 @@
+package com.example.bingb511;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnFocusChangeListener;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class PassActivity extends Activity {
+	
+	EditText edit1,edit2,edit3,edit4;
+	String s1,s2,s3,s4;
+	
+	@SuppressLint("ShowToast")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_pass);
+		
+		edit1 = (EditText)findViewById(R.id.edit1);
+		edit2 = (EditText)findViewById(R.id.edit2);
+		edit3 = (EditText)findViewById(R.id.edit3);
+		edit4 = (EditText)findViewById(R.id.edit4);
+		
+		
+		s2 = edit2.getText().toString();
+		s3 = edit3.getText().toString();
+		s4 = edit4.getText().toString();
+		
+		edit1.setOnFocusChangeListener(new OnFocusChangeListener(){
+			
+			public void onFocusChange(View v, boolean hasFocus){
+				
+				
+				s1 = edit1.getText().toString();
+				Toast.makeText(PassActivity.this, s1, Toast.LENGTH_LONG).show();
+				if(s1.equals("1")){
+					
+				}
+				
+				
+				
+				
+				/*if(s1.equals("1")){
+					edit2.requestFocus();
+				}*/	
+			}
+		});
+
+		/*edit4.setOnFocusChangeListener(new OnFocusChangeListener(){
+			public void onFocusChange(View v, boolean hasFocus){
+				if(hasFocus){
+	                //获得焦点处理
+					s1 = edit1.getText().toString();
+					s2 = edit2.getText().toString();
+					s3 = edit3.getText().toString();
+					s4 = edit4.getText().toString();
+	            }
+	            else {
+					//失去焦点处理
+	            	if(s1 == "5" && s2 == "2" && s3 == "0" && s4 == "1"){
+	    				Toast.makeText(getApplicationContext(), s4, Toast.LENGTH_SHORT).show();
+	    			}
+	            }
+			}
+			
+		});*/
+		
+		
+	}
+}

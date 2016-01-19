@@ -1,0 +1,49 @@
+package com.example.bingb511;
+
+import android.app.TabActivity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.widget.TabHost;
+
+@SuppressWarnings("deprecation")
+public class IndexActivity extends TabActivity {
+	
+	private TabHost tabHost;
+	
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+		
+		tabHost = getTabHost();
+		addTab();  //添加标签
+		tabHost.setBackgroundColor(Color.argb(150,20,80,150)); //设置tabhost的颜色
+		tabHost.setBackgroundResource(R.drawable.ic_launcher);  //设置tabhost的背景图片
+		tabHost.setCurrentTab(0); //默认显示哪一个标签
+
+		private void addTab() {
+			 tabHost.addTab(tabHost
+			  .newTabSpec("tab1")
+			  .setIndicator("TAB1",
+			   getResources().getDrawable(R.drawable.ic_launcher))// setIndicator()此方法用来设置标签和图表
+			  .setContent(R.id.textview1));
+			 // 指定内容为一个TextView --->public TabHost.TabSpec setContent(int viewId) 此方法需要一个 viewId 作为参数
+			 tabHost.addTab(tabHost
+			  .newTabSpec("tab2")
+			  .setIndicator("TAB2",
+			   getResources().getDrawable(R.drawable.ic_launcher))
+			  .setContent(R.id.textview2));
+
+			 tabHost.addTab(tabHost
+			  .newTabSpec("tab3")
+			  .setIndicator("TAB3",
+			   getResources().getDrawable(R.drawable.ic_launcher))
+			  .setContent(R.id.textview3));
+			 }
+			}
+	}
+
+	private void addTab() {
+		// TODO Auto-generated method stub
+		
+	}
+}

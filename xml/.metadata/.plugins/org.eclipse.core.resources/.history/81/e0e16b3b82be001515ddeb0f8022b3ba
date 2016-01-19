@@ -1,0 +1,129 @@
+package com.example.bingb511;
+
+import java.util.TimerTask;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
+
+public class PassActivity extends Activity {
+	
+	EditText edit1,edit2,edit3,edit4;
+	String s1,s2,s3,s4;
+	String[] pass;
+	static int count = 0;
+	
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_pass);
+		
+		edit1 = (EditText)findViewById(R.id.edit1);
+		edit2 = (EditText)findViewById(R.id.edit2);
+		edit3 = (EditText)findViewById(R.id.edit3);
+		edit4 = (EditText)findViewById(R.id.edit4);
+		
+		edit1.addTextChangedListener(new TextWatcher(){
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				// TODO Auto-generated method stub	
+			}
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				s1 = edit1.getText().toString();
+				if(s1 != null){
+					if(s1.equals("1")){
+						edit2.requestFocus();
+					}
+				}
+			}
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub	
+				
+			}
+		});
+		
+		edit2.addTextChangedListener(new TextWatcher(){
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				// TODO Auto-generated method stub	
+			}
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				s2 = edit2.getText().toString();
+				if(s2 != null){
+					if(s2.equals("1")){
+						edit3.requestFocus();
+					}
+				}
+			}
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub	
+				
+			}
+		});
+		
+		edit3.addTextChangedListener(new TextWatcher(){
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				// TODO Auto-generated method stub	
+			}
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				s3 = edit1.getText().toString();
+				if(s3 != null){
+					if(s3.equals("1")){
+						edit4.requestFocus();
+					}
+				}
+			}
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub	
+				
+			}
+		});
+		
+		edit4.addTextChangedListener(new TextWatcher(){
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				// TODO Auto-generated method stub	
+			}
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				s4 = edit4.getText().toString();
+				if(s4 != null){
+					if(s4.equals("1")){
+						final Intent intent = new Intent();
+						intent.setClass(PassActivity.this, MainActivity.class);  
+						@SuppressWarnings("unused")
+						TimerTask task = new TimerTask(){ //timertask实现runnable接口,TimerTask类就代表一个在指定时间内执行的task
+							public void run(){
+								startActivity(intent);  
+							}
+						};
+					}
+				}
+			}
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub	
+				
+			}
+		});
+		
+		
+	}
+}

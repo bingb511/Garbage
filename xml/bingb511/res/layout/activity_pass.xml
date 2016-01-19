@@ -10,10 +10,13 @@
         android:layout_weight="1"
         android:layout_width="0dip"
         android:layout_height="50dip"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:layout_marginRight="10dip"
         android:layout_marginEnd="10dip"
         android:padding="5dip"
+        android:maxLength="1"
+        android:selectAllOnFocus="true"
+        android:gravity="center"
         android:background="@drawable/edit_bg" />
     <EditText
         android:id="@+id/edit2"
@@ -23,7 +26,10 @@
         android:layout_marginRight="10dip"
         android:layout_marginEnd="10dip"
         android:padding="5dip"
-        android:inputType="textPassword"
+        android:maxLength="1"
+        android:selectAllOnFocus="true"
+        android:gravity="center"
+        android:inputType="numberPassword"
         android:background="@drawable/edit_bg" />
     <EditText
         android:id="@+id/edit3"
@@ -33,7 +39,10 @@
         android:layout_marginRight="10dip"
         android:layout_marginEnd="10dip"
         android:padding="5dip"
-        android:inputType="textPassword"
+        android:maxLength="1"
+        android:selectAllOnFocus="true"
+        android:gravity="center"
+        android:inputType="numberPassword"
         android:background="@drawable/edit_bg" />
     <EditText
         android:id="@+id/edit4"
@@ -43,7 +52,11 @@
         android:layout_marginRight="10dip"
         android:layout_marginEnd="10dip"
         android:padding="5dip"
-        android:inputType="textPassword"
+        android:maxLength="1"
+        android:selectAllOnFocus="true"
+        android:gravity="center"
+        android:inputType="numberPassword"
         android:background="@drawable/edit_bg" />
+    <!-- 输入的文字居中  android:gravity="center" -->
 
 </LinearLayout>

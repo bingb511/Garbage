@@ -1,0 +1,77 @@
+package com.example.bingb511;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnKeyListener;
+import android.widget.EditText;
+
+public class PassActivity extends Activity {
+	
+	EditText edit1,edit2,edit3,edit4;
+	private EditText[] txts;
+	private static int count = 0;
+	
+	@SuppressLint("ShowToast")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_pass);
+		
+		edit1 = (EditText)findViewById(R.id.edit1);
+		edit2 = (EditText)findViewById(R.id.edit2);
+		edit3 = (EditText)findViewById(R.id.edit3);
+		edit4 = (EditText)findViewById(R.id.edit4);
+		
+		
+		
+		OnKeyListener key = new View.OnKeyListener() {
+			  public boolean onKey(View view, int i, KeyEvent keyevent) {
+				   if (i == KeyEvent.KEYCODE_DEL) {
+				    reset();
+				   }
+				   return false;
+			  }
+		};
+		//循环给每个EditText添加监听
+		public void addTextListener(){
+			if(txts != null){
+				for(int i = 0; i < txts.length; i++){
+					txts[i].setOnKeyListener(key);
+					txts[i].addTextChangedListener(watcher);
+				}
+			}
+		}
+		
+		//内容改变的监听接口
+		TextWatcher watcher = new TextWatcher() {
+			   
+			  public void onTextChanged(CharSequence charsequence, int i, int j, int k) {
+			   /**
+			    * 如果当前的EditText中没有值，则执行
+			    */
+			   if (j == 0) {
+			    if (count < txts.length - 1) {
+			   
+			     txts[++count].requestFocus();
+			    } else {
+			     sendCode();
+			    }
+			       
+			   }
+			  }
+			  public void beforeTextChanged(CharSequence charsequence, int i, int j,
+			    int k) {
+			  }
+			  public void afterTextChanged(Editable editable) {
+			   
+			  }
+			 };
+
+	}
+
+}

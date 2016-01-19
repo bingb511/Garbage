@@ -1,0 +1,47 @@
+package com.example.bingb511;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnFocusChangeListener;
+import android.widget.EditText;
+
+public class PassActivity extends Activity {
+	
+	EditText edit1,edit2,edit3,edit4;
+	String s1
+	
+	@SuppressLint("ShowToast")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_pass);
+		
+		edit1 = (EditText)findViewById(R.id.edit1);
+		edit2 = (EditText)findViewById(R.id.edit2);
+		edit3 = (EditText)findViewById(R.id.edit3);
+		edit4 = (EditText)findViewById(R.id.edit4);
+
+		edit4.setOnFocusChangeListener(new OnFocusChangeListener(){
+			public void onFocusChange(View v, boolean hasFocus){
+				if(hasFocus){
+	                //获得焦点处理
+					String s1 = edit1.getText().toString();
+					String s2 = edit2.getText().toString();
+					String s3 = edit3.getText().toString();
+					String s4 = edit4.getText().toString();
+	            }
+	            else {
+					//失去焦点处理
+	            	if(s1 == "0" && s2 == "5" && s3 == "1" && s4 == "1"){
+	    				
+	    			}
+	            }
+			}
+			
+		});
+		
+		
+	}
+}
