@@ -81,7 +81,7 @@ public class PassActivity extends Activity {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
-				s3 = edit1.getText().toString();
+				s3 = edit3.getText().toString();
 				if(s3 != null){
 					if(s3.equals("0")){
 						edit4.requestFocus();
