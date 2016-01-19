@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="time_next">Next</string>
+    <string name="app_name">MIUI日历</string>
+    <string name="time_prev">Previous</string>
+
+</resources>
