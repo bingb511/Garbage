@@ -1,0 +1,38 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+ 2     android:id="@+id/mytabhost"
+ 3     android:layout_width="fill_parent"
+ 4     android:layout_height="fill_parent">
+ 5 
+ 6     <!-- 需要一个布局管理器 -->
+ 7  
+ 8     <RelativeLayout
+ 9         android:layout_width="fill_parent"
+10         android:layout_height="fill_parent" 
+11         >
+12         
+13                 <!--
+14        由于TabHost是继承于FrameLayout，所以需要一个FrameLaytout布局(内容页) ,id
+15        必须为tabcontent
+16         -->
+17 
+18         <FrameLayout
+19             android:id="@android:id/tabcontent"
+20             android:layout_width="fill_parent"
+21             android:layout_height="fill_parent" 
+22             >
+23         </FrameLayout>
+24 
+25         <!-- TabWidget必须标签，用来存放tab标签，且id必须为tabs -->
+26 
+27         <TabWidget
+28             android:id="@android:id/tabs"
+29             android:layout_width="fill_parent"
+30             android:layout_height="wrap_content"
+31             android:background="@drawable/tab_widget_background"
+32             android:layout_alignParentBottom="true"
+33             >
+34         </TabWidget>
+35 
+36     </RelativeLayout>
+37 
+38 </TabHost>

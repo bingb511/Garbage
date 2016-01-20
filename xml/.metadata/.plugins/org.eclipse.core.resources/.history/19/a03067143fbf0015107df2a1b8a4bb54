@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 2 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ 3     android:layout_width="match_parent"
+ 4     android:layout_height="match_parent" >
+ 5 
+ 6     <LinearLayout
+ 7         android:layout_width="match_parent"
+ 8         android:layout_height="match_parent"
+ 9         android:orientation="vertical" >
+10 
+11 
+12         <TextView
+13             android:id="@+id/title"
+14             android:layout_width="wrap_content"
+15             android:layout_height="wrap_content" 
+16             android:text="我是界面1"/>
+17     </LinearLayout>
+18 
+19 </RelativeLayout>

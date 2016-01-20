@@ -1,0 +1,33 @@
+package com.example.bingb511;
+
+import android.app.TabActivity;
+import android.os.Bundle;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+ 
+public class MainActivity extends TabActivity {
+ 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.tabhost);
+         
+        TabHost tabHost = getTabHost();
+         
+        TabSpec page1 = tabHost.newTabSpec(tab1)
+                .setIndicator(½ÐÊÞ)
+                .setContent(R.id.isanimal);
+        tabHost.addTab(page1);
+         
+        TabSpec page2 = tabHost.newTabSpec(tab2)
+                .setIndicator(ÀÏÊª)
+                .setContent(R.id.alwayswet);
+        tabHost.addTab(page2);
+         
+        TabSpec page3 = tabHost.newTabSpec(tab3)
+                .setIndicator(ÄÄß¸)
+                .setContent(R.id.nezha);
+        tabHost.addTab(page3);
+    }
+ 
+}

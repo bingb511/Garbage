@@ -1,0 +1,59 @@
+package com.example.bingb511;
+
+import android.app.ActivityGroup;
+4 import android.content.Intent;
+5 import android.os.Bundle;
+6 import android.view.View;
+7 import android.widget.ImageView;
+8 import android.widget.TabHost;
+9 import android.widget.TabHost.TabSpec;
+10 import android.widget.TextView;
+11 
+12 public class MainActivity extends ActivityGroup{
+13     
+14     private TabHost tabHost;//声明一个TabHost对象
+15 
+16     //资源文件
+17     private Class activitys[]={TabActivity1.class,TabActivity2.class,TabActivity3.class,TabActivity4.class,TabActivity5.class};//跳转的Activity
+18     private String title[]={"首页","搜索","设置","主题","更多"};//设置菜单的标题
+19     private int image[]={R.drawable.tab_icon1,R.drawable.tab_icon2,R.drawable.tab_icon3,R.drawable.tab_icon4,R.drawable.tab_icon5,};//设置菜单
+20     
+21     @Override
+22     protected void onCreate(Bundle savedInstanceState) {
+23         super.onCreate(savedInstanceState);
+24         setContentView(R.layout.activity_main);
+25         initTabView();//初始化tab标签
+26         
+27     }
+28 
+29     private void initTabView() {
+30         //实例化tabhost
+31         this.tabHost=(TabHost) findViewById(R.id.mytabhost);
+32         //由于继承了ActivityGroup，所以需要在setup方法里加入此参数，若继承TabActivity则可省略
+33         tabHost.setup(this.getLocalActivityManager());
+34         
+35         //创建标签
+36         for(int i=0;i<activitys.length;i++){
+37             //实例化一个view作为tab标签的布局
+38             View view=View.inflate(this, R.layout.tab_layout, null);
+39             
+40             //设置imageview
+41             ImageView imageView=(ImageView) view.findViewById(R.id.image);
+42             imageView.setImageDrawable(getResources().getDrawable(image[i]));
+43             //设置textview
+44             TextView textView=(TextView) view.findViewById(R.id.title);
+45             textView.setText(title[i]);
+46             //设置跳转activity
+47             Intent intent=new Intent(this, activitys[i]);
+48             
+49             //载入view对象并设置跳转的activity
+50             TabSpec spec=tabHost.newTabSpec(title[i]).setIndicator(view).setContent(intent);
+51             
+52             //添加到选项卡
+53             tabHost.addTab(spec);
+54         }
+55         
+56     }
+57 
+58 
+59 }

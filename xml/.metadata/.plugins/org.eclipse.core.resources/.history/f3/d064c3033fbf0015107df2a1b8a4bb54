@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 2 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+ 3         <item android:drawable="@drawable/tab_item_p" android:state_pressed="true"></item>
+ 6         <item android:drawable="@drawable/tab_item_d" android:state_selected="true"></item>
+ 9 
+10 
+</selector>

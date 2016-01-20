@@ -22,6 +22,7 @@ java_multi_line_comment=98,98,98
 java_operator=230,230,250
 java_single_line_comment=98,98,98
 java_string=23,198,163
+markOccurrences=false
 matchingBracketsColor=102,112,125
 org.eclipse.jdt.internal.ui.navigator.layout=2
 org.eclipse.jdt.ui.editor.tab.width=

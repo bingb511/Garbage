@@ -1,0 +1,20 @@
+package com.example.bingb511;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.widget.TabHost;
+
+public class IndexActivity extends Activity {
+
+	private TabHost tabHost;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+
+		tabHost = (TabHost) this.findViewById(R.id.tabhost);
+		tabHost.setup(); 
+		
+	}
+}

@@ -1,0 +1,68 @@
+
+import android.app.Activity; 
+02.
+import android.os.Bundle; 
+03.
+import android.util.Log; 
+04.
+import android.view.LayoutInflater; 
+05.
+import android.widget.TabHost; 
+06.
+ 
+07.
+public class Test_TabHost extends Activity { 
+08.
+/** Called when the activity is first created. */ 
+09.
+private TabHost tabHost; 
+10.
+ 
+11.
+@Override 
+12.
+public void onCreate(Bundle savedInstanceState) { 
+13.
+super.onCreate(savedInstanceState); 
+14.
+setContentView(R.layout.main); 
+15.
+try{ 
+16.
+tabHost = (TabHost) this.findViewById(R.id.TabHost01); 
+17.
+tabHost.setup(); 
+18.
+ 
+19.
+tabHost.addTab(tabHost.newTabSpec("tab_1") 
+20.
+.setContent(R.id.LinearLayout1) 
+21.
+.setIndicator("TAB1",this.getResources().getDrawable(R.drawable.img1))); 
+22.
+tabHost.addTab(tabHost.newTabSpec("tab_2") 
+23.
+.setContent(R.id.LinearLayout2).setIndicator("TAB2", 
+24.
+this.getResources().getDrawable(R.drawable.img2))); 
+25.
+tabHost.addTab(tabHost.newTabSpec("tab_3") 
+26.
+.setContent(R.id.LinearLayout3).setIndicator("TAB3", 
+27.
+this.getResources().getDrawable(R.drawable.img3))); 
+28.
+tabHost.setCurrentTab(1); 
+29.
+}catch(Exception ex){ 
+30.
+ex.printStackTrace(); 
+31.
+Log.d("EXCEPTION", ex.getMessage()); 
+32.
+} 
+33.
+} 
+34.
+} 

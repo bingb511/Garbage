@@ -1,0 +1,68 @@
+<tabhost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <linearlayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <tabwidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal/" >
+
+            <framelayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <linearlayout
+                    android:id="@+id/alwayswet"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <imageview
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scaletype="fitXY"
+                        android:src="@drawable/alwayswet/" >
+                    </imageview>
+                </linearlayout>
+
+                <linearlayout
+                    android:id="@+id/isanimal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <imageview
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scaletype="fitXY"
+                        android:src="@drawable/isanimal/" >
+                    </imageview>
+                </linearlayout>
+
+                <linearlayout
+                    android:id="@+id/nezha"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <imageview
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scaletype="fitXY"
+                        android:src="@drawable/nazha/" >
+                    </imageview>
+                </linearlayout>
+            </framelayout>
+        </tabwidget>
+    </linearlayout>
+
+</tabhost>
