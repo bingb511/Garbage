@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">bingb511</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="select">选择图片</string>
+    <string name="tip">(友情提示:只能添加9张图片,长按图片可以删除已添加图片)</string>
+    
+    
+
+
+</resources>

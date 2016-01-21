@@ -1,0 +1,37 @@
+package com.example.bingb511;
+
+import android.annotation.SuppressLint;
+import android.app.TabActivity;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+
+@SuppressWarnings("deprecation")
+public class IndexActivity extends TabActivity {
+
+	private TabHost tabHost;
+	Bitmap bmpDefaultPic;
+
+	@SuppressLint("SdCardPath")
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+
+		tabHost = getTabHost();
+
+		TabSpec page1 = tabHost.newTabSpec("tab1").setIndicator("压缩图片").setContent(R.id.tab1);
+		tabHost.addTab(page1);
+
+		TabSpec page2 = tabHost.newTabSpec("tab2").setIndicator("日历记事").setContent(R.id.tab2);
+		tabHost.addTab(page2);
+
+		TabSpec page3 = tabHost.newTabSpec("tab3").setIndicator("资料备份").setContent(R.id.tab3);
+		tabHost.addTab(page3);
+
+
+		
+
+	}
+
+}
