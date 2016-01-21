@@ -1,6 +1,9 @@
 package com.example.bingb511;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.TabActivity;
 import android.content.ContentResolver;
@@ -25,6 +28,7 @@ public class IndexActivity extends TabActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_index);
 
+		//选项卡
 		tabHost = getTabHost();// 从TabActivity上面获取放置Tab的TabHost
 		addTab(); // 添加标签
 		tabHost.setBackgroundColor(Color.argb(255, 255, 255, 1)); // 设置tabhost的颜色
@@ -45,9 +49,11 @@ public class IndexActivity extends TabActivity {
                 startActivityForResult(intent, 1);    
             }    
                 
-        });    
-	}
-
+        });  
+        //end 按钮显示图片
+	}  
+	
+	//选项卡
 	private void addTab() {
 		// setIndicator()此方法用来设置标签和图表
 		// 指定内容为一个TextView --->public TabHost.TabSpec setContent(int viewId)
@@ -62,6 +68,7 @@ public class IndexActivity extends TabActivity {
 		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("压缩图片", getResources().getDrawable(R.drawable.version))
 				.setContent(R.id.tab3));
 	}
+	//end  选项卡
 
 	//按钮显示图片
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {    
@@ -79,5 +86,42 @@ public class IndexActivity extends TabActivity {
 	        }    
 	    }    
 	    super.onActivityResult(requestCode, resultCode, data);    
-	 }    
+	 }
+	//end 按钮显示图片
+	
+    //gridView显示图片
+    private List<String> imagePath = new ArrayList<String>();//图片文件路径
+    private static String[] imageFormatSet = new String[]{"jpg","png","gif"};
+    //判断是否为图片文件
+  
+	@SuppressWarnings("unused")
+	private void getFiles(String url){
+    	File files = new File(url);
+    	File[] file = files.listFiles();
+    	try{
+    		for(File f:file){
+    			if(f.isDirectory()){
+    				getFiles(f.getAbsolutePath());
+    			} else {
+    				if(isImageFile(f.getPath())){
+    					imagePath.add(f.getPath());
+    				}
+    			}
+    		}
+    	} catch( Exception e){
+    		e.printStackTrace();
+    	}
+    }
+    
+	//end gridView显示图片
+
+	private static boolean isImageFile(String path){
+    	for(String format:imageFormatSet){
+    		if(path.contains(format)){
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+	
 }   

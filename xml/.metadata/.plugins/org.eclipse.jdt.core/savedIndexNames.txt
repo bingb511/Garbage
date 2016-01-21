@@ -28,7 +28,6 @@ INDEX VERSION 1.127+E:\Android\Garbage\xml\.metadata\.plugins\org.eclipse.jdt.co
 46250110.index
 1236363946.index
 4117845013.index
-3844350124.index
 3278885424.index
 1215609844.index
 3109352440.index
