@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="480px"
+	android:layout_height="800px">
+	<LinearLayout android:layout_marginTop="150px"
+		android:layout_marginLeft="38px" android:background="@drawable/hei4"
+		android:orientation="vertical" android:layout_width="400px"  
+		android:layout_height="400px">
+		<RelativeLayout android:orientation="horizontal"
+			android:layout_width="400px" android:layout_height="400px">
+			<Button android:layout_width="fill_parent"
+				android:layout_height="100px"
+				android:id="@+id/jpzyMakeButton" 
+				android:layout_centerVertical="false"
+				
+				/>
+			<Button android:layout_width="fill_parent"
+				android:layout_height="100px"
+				android:id="@+id/jpzyCancelButton"
+				android:layout_below="@id/jpzyMakeButton" 
+				
+				/>
+		
+		
+			   
+			  
+		</RelativeLayout>
+	</LinearLayout>
+
+</LinearLayout>

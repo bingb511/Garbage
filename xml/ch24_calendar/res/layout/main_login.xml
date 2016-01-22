@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:id="@+id/bestRelativeLayout"
+	android:background="@drawable/icon">
+
+	<Button android:layout_width="480px" android:layout_height="800px"
+		android:id="@+id/button" android:background="@drawable/picture" />
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="480px" android:layout_height="800px">
+		>
+		<TableLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginTop="20dip"
+			android:layout_marginLeft="10dip">
+			<TableRow android:layout_width="fill_parent"
+				android:layout_height="50dip">
+				<LinearLayout android:id="@+id/password">
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="fill_parent" android:text="输入密码"
+						android:layout_gravity="right" android:gravity="center_vertical" 
+						android:textSize="18dip" />
+					<EditText android:id="@+id/login_password"
+						android:layout_width="200dip" android:layout_height="wrap_content"
+						android:password="true" android:layout_marginLeft="20dip" />
+				</LinearLayout>
+			</TableRow>
+ 
+			<TableRow android:layout_width="fill_parent"
+				android:layout_height="50dip" android:layout_marginTop="10dip"
+				android:gravity="center_vertical">
+				<LinearLayout android:id="@+id/password2">
+
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="fill_parent" android:text="重复密码"
+						android:layout_gravity="right" android:gravity="center_vertical"
+						android:textSize="18dip" />
+					<EditText android:id="@+id/login_password2"
+						android:layout_width="200dip" android:layout_height="wrap_content"
+						android:password="true" android:layout_marginLeft="20dip" />
+				</LinearLayout>
+
+
+			</TableRow>
+
+		</TableLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="center"
+			android:layout_marginTop="20dip">
+			<Button android:id="@+id/save_password"
+				android:layout_width="80dip" android:layout_height="wrap_content"
+				android:text="@string/ok" android:textSize="16dip" />
+		</LinearLayout>
+
+
+
+	</LinearLayout>
+
+
+</RelativeLayout>
