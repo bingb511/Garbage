@@ -1,0 +1,10 @@
+package com.example.bing0;
+
+public class DefaultHttpClient {
+
+	public HttpResponse execute(HttpPost httpPost) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

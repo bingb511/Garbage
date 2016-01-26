@@ -1,0 +1,9 @@
+package com.example.bing0;
+
+public class HttpPost {
+
+	public HttpPost(String url) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

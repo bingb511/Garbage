@@ -1,0 +1,10 @@
+package com.example.bing0;
+
+public class HttpResponse {
+
+	public HttpEntity getEntity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

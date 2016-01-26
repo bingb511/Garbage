@@ -1,0 +1,101 @@
+package com.example.bing0;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class IndexActivity extends FragmentActivity {
+
+	private ImageView topButton;
+	private Fragment mContent;
+	private TextView topTextView;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+		
+		topButton = (ImageView) findViewById(R.id.topButton);
+		topButton.setOnClickListener((OnClickListener) this);
+		topTextView = (TextView) findViewById(R.id.topTv);
+			
+	}
+	
+	private void initSlidingMenu(Bundle savedInstanceState) {
+		// 濡傛灉淇濆瓨鐨勭姸鎬佷笉涓虹┖鍒欏緱鍒颁箣鍓嶄繚瀛樼殑Fragment锛屽惁鍒欏疄渚嬪寲MyFragment
+		if (savedInstanceState != null) {
+			mContent = getSupportFragmentManager().getFragment(
+					savedInstanceState, "mContent");
+		}
+
+		if (mContent == null) {
+			mContent = new TodayFragment();
+		}
+
+		// 璁剧疆宸︿晶婊戝姩鑿滃崟
+		setBehindContentView(R.layout.menu_frame_left);
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.menu_frame, new LeftFragment()).commit();
+
+		// 瀹炰緥鍖栨粦鍔ㄨ彍鍗曞璞�
+		SlidingMenu sm = getSlidingMenu();
+		// 璁剧疆鍙互宸﹀彸婊戝姩鐨勮彍鍗�
+		sm.setMode(SlidingMenu.LEFT);
+		// 璁剧疆婊戝姩闃村奖鐨勫搴�
+		sm.setShadowWidthRes(R.dimen.shadow_width);
+		// 璁剧疆婊戝姩鑿滃崟闃村奖鐨勫浘鍍忚祫婧�
+		sm.setShadowDrawable(null);
+		// 璁剧疆婊戝姩鑿滃崟瑙嗗浘鐨勫搴�
+		sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+		// 璁剧疆娓愬叆娓愬嚭鏁堟灉鐨勫��
+		sm.setFadeDegree(0.35f);
+		// 璁剧疆瑙︽懜灞忓箷鐨勬ā寮�,杩欓噷璁剧疆涓哄叏灞�
+		sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		// 璁剧疆涓嬫柟瑙嗗浘鐨勫湪婊氬姩鏃剁殑缂╂斁姣斾緥
+		sm.setBehindScrollScale(0.0f);
+
+	}
+
+	private void setBehindContentView(int menuFrameLeft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		getSupportFragmentManager().putFragment(outState, "mContent", mContent);
+	}
+
+	/**
+	 * 鍒囨崲Fragment
+	 * 
+	 * @param fragment
+	 */
+	public void switchConent(Fragment fragment, String title) {
+		mContent = fragment;
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.content_frame, fragment).commit();
+		getSlidingMenu().showContent();
+		topTextView.setText(title);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.topButton:
+			toggle();
+			break;
+		default:
+			break;
+		}
+	}
+}

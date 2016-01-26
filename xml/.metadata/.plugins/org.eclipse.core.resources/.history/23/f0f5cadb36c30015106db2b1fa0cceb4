@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">bing0</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="username_text">用户名：</string>
+    <string name="username_hint">请输入用户名</string>
+    <string name="password_text">密码：</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="login">登录</string>
+    
+    <string name="zuo">登录成功的页面</string>
+
+</resources>

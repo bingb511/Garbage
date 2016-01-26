@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6dbff1"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.bing0.MainActivity" >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@drawable/logo"
+        android:src="@drawable/logo" />
+
+    <TableLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="20dip"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/username_text"
+                android:gravity="end"
+                android:text="@string/username_text"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:background="@drawable/bg_edittext"
+                android:ems="10"
+                android:hint="@string/username_hint"
+                android:inputType="text"
+                android:textColorHint="#ffffff"
+                android:textSize="14sp" />
+        </TableRow>
+        
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear1"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/password_text"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/password_text"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:textColorHint="#FFFFFF"
+            android:textSize="14sp" />
+    </TableLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dip"
+        android:gravity="center"
+        android:text="@string/login" />
+
+</RelativeLayout>

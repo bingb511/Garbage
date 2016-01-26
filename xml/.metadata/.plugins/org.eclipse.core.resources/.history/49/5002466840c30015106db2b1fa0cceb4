@@ -1,0 +1,26 @@
+package com.example.bing0;
+
+import com.example.bing0.fragment.TodayFragment;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class IndexActivity extends FragmentActivity {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_index);
+			
+	}
+	
+	
+}

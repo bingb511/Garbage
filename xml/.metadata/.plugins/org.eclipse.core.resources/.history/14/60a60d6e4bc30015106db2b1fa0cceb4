@@ -1,0 +1,10 @@
+package com.example.bing0;
+
+public class EntityUtils {
+
+	public static String toString(HttpEntity httpEntity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
