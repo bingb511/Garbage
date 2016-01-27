@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+div {width:20px; height:20px; position:absolute; border:1px solid black;}
+.normal {background:white;}
+.active {background:red;}
+.fix {background:#333;}
+#txt1 {position:absolute; left:250px;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+window.onload=function ()
+{
+ var rows=20;
+ var cols=10;
+ var i=0;
+ var j=0;
+ var k=0;
+ var arr=[];
+ var oTxt=document.getElementById('txt1');
+ var aDiv=document.body.getElementsByTagName('div');
+ 
+ oTxt.value=0;
+ 
+ for(i=0;i<rows;i++)
+ {
+  arr[i]=[];
+  
+  for(j=0;j<cols;j++)
+  {
+   arr[i][j]=document.createElement('div');
+   
+   arr[i][j].style.top=i*24+'px';
+   arr[i][j].style.left=j*24+'px';
+   
+   arr[i][j].className='normal';
+   
+   document.body.appendChild(arr[i][j]);
+  }
+ }
+ 
+ var nowBlock={type: 0, cells: []};
+ 
+ function createNewBlock()
+ {
+  var type=Math.ceil(Math.random()*5);
+  var i=0;
+  
+  nowBlock.type=type;
+  
+  switch(type)
+  {
+   case 1:
+    nowBlock.cells=[[0, cols/2-2], [0, cols/2-1], [0, cols/2], [0, cols/2+1]];
+    break;
+   case 2:
+    nowBlock.cells=[[0, cols/2-2], [0, cols/2-1], [0, cols/2], [1, cols/2-2]];
+    break;
+   case 3:
+    nowBlock.cells=[[1, cols/2-1], [1, cols/2], [1, cols/2+1], [0, cols/2]];
+    break;
+   case 4:
+    nowBlock.cells=[[0, cols/2-1], [0, cols/2], [1, cols/2-1], [1, cols/2]];
+    break;
+   case 5:
+    nowBlock.cells=[[0, cols/2-1], [0, cols/2], [1, cols/2], [1, cols/2+1]];
+    break;
+  }
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   if(arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]].className=='fix')
+   {
+    finish();
+    clearInterval(timer);
+    document.onkeydown=null;
+    return;
+   }
+  }
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]].className='active';
+  }
+ }
+ 
+ function finish()
+ {
+  alert('哈哈，你输了，最终得分是：'+oTxt.value+'行，点击确定，重开一局吧！');
+  window.location.reload();
+ }
+ 
+ function findFullLine()
+ {
+  var aResult=[];
+  for(i=0;i<rows;i++)
+  {
+   var count=0;
+   for(j=0;j<cols;j++)
+   {
+    if(arr[i][j].className=='fix')
+    {
+     count++;
+    }
+   }
+   if(count==cols)
+   {
+    aResult.push(i);
+   }
+  }
+  
+  return aResult;
+ }
+ 
+ function clearAllFullLine(lines)
+ {
+  for(i=0;i<lines.length;i++)
+  {
+   for(j=lines[i];j>0;j--)
+   {
+    for(k=0;k<cols;k++)
+    {
+     arr[j][k].className=arr[j-1][k].className;
+    }
+   }
+  }
+ }
+ 
+ function moveDown()
+ {
+  var i=0;
+  
+  //检测是否碰到底边
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   if(nowBlock.cells[i][0]+1==rows || arr[nowBlock.cells[i][0]+1][nowBlock.cells[i][1]].className=='fix')
+   {
+    for(i=0;i<nowBlock.cells.length;i++)
+    {
+     arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]].className='fix';
+    }
+    createNewBlock();
+    
+    var fullLine=findFullLine();
+    if(fullLine.length)
+    {
+     clearAllFullLine(fullLine);
+     oTxt.value=parseInt(oTxt.value)+fullLine.length;
+    }
+   }
+  }
+  
+  clear();
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   nowBlock.cells[i][0]++;
+  }
+  refresh();
+ }
+ 
+ function clear()
+ {
+  var i=0;
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]].className='normal';
+  }
+ }
+ 
+ function refresh()
+ {
+  var i=0;
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   
+   arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]].className='active';
+  }
+ }
+ 
+ function findMax(arr)
+ {
+  var maxX=0;
+  var maxY=0;
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   if(maxX<nowBlock.cells[i][0])
+   {
+    maxX=nowBlock.cells[i][0];
+   }
+   if(maxY<nowBlock.cells[i][1])
+   {
+    maxY=nowBlock.cells[i][1];
+   }
+  }
+  
+  return {x: maxX, y: maxY};
+ }
+ 
+ function findMin(arr)
+ {
+  var minX=9999;
+  var minY=9999;
+  
+  for(i=0;i<arr.length;i++)
+  {
+   if(minX>arr[i][0])
+   {
+    minX=arr[i][0];
+   }
+   if(minY>arr[i][1])
+   {
+    minY=arr[i][1];
+   }
+  }
+  
+  return {x: minX, y: minY};
+ }
+ 
+ function ration()
+ {
+  var tmp=0;
+  var oMin=findMin(nowBlock.cells);
+  var aNew=[];
+  var aNew2=[];
+  var aTmp=[];
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   aNew[i]=[nowBlock.cells[i][0]-oMin.x, nowBlock.cells[i][1]-oMin.y];
+   aNew2[i]=[4-aNew[i][1], aNew[i][0]];
+   //alert(aNew[i]+'->'+aNew2[i]);
+   /*tmp=aNew[i][0];
+   aNew[i][0]=aNew[i][1];
+   aNew[i][1]=tmp;*/
+  }
+  
+  var oMinTmp=findMin(aNew2);
+  
+  for(i=0;i<aNew2.length;i++)
+  {
+   aNew2[i][0]-=oMinTmp.x;
+   aNew2[i][1]-=oMinTmp.y;
+   
+   //alert(aNew2[i]);
+  }
+  
+  aNew=aNew2;
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   aTmp[i]=[oMin.x+aNew[i][0], oMin.y+aNew[i][1]];
+  }
+  
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   if(aTmp[i][0]<0 || aTmp[i][0]>=rows || aTmp[i][1]<0 || aTmp[i][1]>=cols || arr[aTmp[i][0]][aTmp[i][1]].className=='fix')
+   {
+    return;
+   }
+  }
+  
+  for(i=0;i<aTmp.length;i++)
+  {
+   nowBlock.cells[i]=aTmp[i];
+  }
+ }
+ 
+ Array.prototype.dup=function (arr)
+ {
+  return [].concar(arr);
+ };
+ 
+ function findLeftColl()
+ {
+  var i=0;
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   if(nowBlock.cells[i][1]<=0 || arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]-1].className=='fix')
+   {
+    return false;
+   }
+  }
+  
+  return true;
+ }
+ 
+ function findRightColl()
+ {
+  var i=0;
+  for(i=0;i<nowBlock.cells.length;i++)
+  {
+   if(nowBlock.cells[i][1]>=cols-1 || arr[nowBlock.cells[i][0]][nowBlock.cells[i][1]+1].className=='fix')
+   {
+    return false;
+   }
+  }
+  
+  return true;
+ }
+ 
+ document.onkeydown=function (ev)
+ {
+  var oEvent=ev||event;
+  
+  //左 - 65
+  //右 - 68
+  //上 - 87
+  //下 - 83
+  
+  switch(oEvent.keyCode)
+  {
+   case 65:
+    if(findLeftColl())
+    {
+     clear();
+     for(i=0;i<nowBlock.cells.length;i++)
+     {
+      nowBlock.cells[i][1]--;
+     }
+     refresh();
+    }
+    break;
+   case 68:
+    if(findRightColl())
+    {
+     clear();
+     for(i=0;i<nowBlock.cells.length;i++)
+     {
+      nowBlock.cells[i][1]++;
+     }
+     refresh();
+    }
+    break;
+   case 83:
+    moveDown();
+    break;
+   case 87:
+    clear();
+    ration();
+    refresh();
+    break;
+  }
+ };
+ 
+ createNewBlock();
+ 
+ var timer=setInterval(moveDown, 1000);
+};
+</script>
+</head>
+<body>
+<input id="txt1" type="text" readonly="1" />
+</body>
+</html>
