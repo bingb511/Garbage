@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<style>
+  body{ padding:20px; }
+</style>
+<script type="text/javascript">
+
+
+	var f = document.getElementsByName("game");
+	function test(){
+		for(var i = 0; i<f.length; i++){
+			if(f[i].checked = false){
+				f[i].checked = true;
+			}
+		}
+	}
+
+	function ftest(){
+		for(var i = 0; i<f.length; i++){
+			if(f[i].checked = true){
+				f[i].checked = false;
+			} else {
+				f[i].checked = true;
+			}
+		}
+	}
+
+	function CancelAll(){
+		for(var i = 0; i<f.length; i++){
+			if(f[i].checked = true){
+				f[i].checked = false;
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+
+<input name="game" type="checkbox" value="lanqiu" />篮球
+    <input name="game" type="checkbox" value="zuqiu" />足球
+    <input name="game" type="checkbox" value="pingpangqiu" />乒乓球
+    <input name="game" type="checkbox" value="bangqiu" />棒球
+    <input name="game" type="checkbox" value="ganlanqiu" />橄榄球
+    <br />
+    <br />
+    <br />
+    <input type="button" value="全选" onclick="test()"/>
+    <input type="button" value="反选" onclick="ftest()"/>
+    <input type="button" value="全不选" onclick="CancelAll()"/>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="weui.min.css" />
+<link rel="stylesheet" href="example.css" />
+</head>
+<body ontouchstart>
+
+<div class="container js_container">
+	<div class="page slideIn actionsheet">
+		<div class="hd">
+			<h1 class="page_title">ActionSheet</h1>
+		</div>
+		<div class="bd spacing">
+			<a href="javascript:;" class="weui_btn weui_btn_primary" id="showActionSheet">点击上拉ActionSheet</a>
+		</div>
+		<div id="actionSheet_wrap">
+			<div class="weui_mask_transparent" id="mask"></div>
+			<div class="weui_actionsheet" id="weui_actionsheet">
+				<div class="weui_actionsheet_menu">
+					<div class="weui_actionsheet_cell">示例菜单</div>
+					<div class="weui_actionsheet_cell">示例菜单</div>
+					<div class="weui_actionsheet_cell">示例菜单</div>
+					<div class="weui_actionsheet_cell">示例菜单</div>
+				</div>
+				<div class="weui_actionsheet_action">
+					<div class="weui_actionsheet_cell" id="actionsheet_cancel">取消</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="zepto.min.js"></script>
+<script src="base.js"></script>
+</body>
+</html>
+

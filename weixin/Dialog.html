@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="weui.min.css" />
+<link rel="stylesheet" href="example.css" />
+</head>
+<body ontouchstart>
+
+<div class="container js_container">
+	<div class="page slideIn dialog">
+		<div class="hd">
+			<h1 class="page_title">Dialog</h1>
+		</div>
+		<div class="bd spacing">
+			<a href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog1">点击弹出Dialog1</a>
+			<a href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog2">点击弹出Dialog2</a>
+		</div>
+		<div class="weui_dialog_confirm" id="dialog1">
+			<div class="weui_mask"></div>
+			<div class="weui_dialog">
+				<div class="weui_dialog_hd">
+					<strong class="weui_dialog_title">弹窗标题</strong>
+				</div>
+				<div class="weui_dialog_bd">自定义弹窗内容，居左对齐显示，告知需要确认的信息等</div>
+				<div class="weui_dialog_ft">
+					<a href="javascript:;" class="weui_btn_dialog default">取消</a>
+					<a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<div class="weui_dialog_alert" id="dialog2">
+			<div class="weui_mask"></div>
+			<div class="weui_dialog">
+				<div class="weui_dialog_hd">
+					<strong class="weui_dialog_title">弹窗标题</strong>
+				</div>
+				<div class="weui_dialog_bd">弹窗内容，告知当前页面信息等</div>
+				<div class="weui_dialog_ft">
+					<a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script src="zepto.min.js"></script>
+<script src="base.js"></script>
+</body>
+</html>
