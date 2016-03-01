@@ -1,0 +1,77 @@
+#home {
+  color: blue;
+  width: 600px;
+  height: 500px;
+  border: outset;
+  background: #ccc;
+}
+#home #top {
+  border: outset;
+  width: 90%;
+}
+#home #content {
+  border: outset;
+  height: 300px;
+  width: 90%;
+}
+#home #content #left {
+  border: outset;
+  float: left;
+  width: 40%;
+}
+#home #content #right {
+  border: outset;
+  float: left;
+  width: 40%;
+}
+#header {
+  color: #4D926F;
+}
+h2 {
+  color: #4D926F;
+}
+.mythemses tableBorder {
+  border: 1px solid #b5bcc7;
+}
+#homeDiv #centerDiv {
+  width: 30px;
+}
+#leftDiv {
+  width: 20px;
+}
+#header {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#footer {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#header {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.btn {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+#header {
+  -moz-box-shadow: 2px 2px 3px #f36;
+  -webkit-box-shadow: 2px 2px 3px #f36;
+  box-shadow: 2px 2px 3px #f36;
+}
+a {
+  color: red;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.switchColor {
+  color: #222222;
+}

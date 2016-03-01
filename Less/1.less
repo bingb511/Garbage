@@ -1,0 +1,90 @@
+#home{
+	color:blue;
+	width:600px;
+	height:500px;
+	border:outset;
+	background:#ccc;
+	#top{
+		border:outset;
+		width:90%;
+	}
+	#content{
+		border:outset;
+		height:300px;
+		width:90%;
+		#left{
+			border:outset;
+			float:left;
+			width:40%;
+		}
+		#right{
+			border:outset;
+			float:left;
+			width:40%;
+		}
+	}
+}
+@color:#4D926F;
+#header{
+	color:@color;
+}
+h2{
+	color:@color;
+}
+@border-color:#b5bcc7;
+.mythemses tableBorder{
+	border:1px solid @border-color;
+}
+@width:20px;
+#homeDiv{
+	@width:30px;
+	#centerDiv{
+		width:@width;
+	}
+}
+#leftDiv{
+	width:@width;
+}
+.rounderCorner(@radius:5px){
+	-moz-border-radius:@radius;
+	-webkit-border-radius:@radius;
+	border-radius:@radius;
+}
+#header{
+	.rounderCorner;
+}
+#footer{
+	.rounderCorner(10px);
+}
+.borderRadius(@radius){
+	-moz-border-radius:@radius;
+	-webkit-border-radius:@radius;
+	border-radius:@radius;
+}
+#header{
+	.borderRadius(10px);
+}
+.btn{
+	.borderRadius(3px);
+}
+.boxShadow(@x:0,@y:0,@blur:1px,@color:#000){
+	-moz-box-shadow:@arguments;
+	-webkit-box-shadow:@arguments;
+	box-shadow:@arguments;
+}
+#header{
+	.boxShadow(2px,2px,3px,#f36);
+}
+a{
+	color:red;
+	text-decoration: none;
+	&:hover{
+		color:black;
+		text-decoration: underline;
+	}
+}
+@init:#111111;
+@transition:@init*2;
+.switchColor{
+	color:@transition;
+}

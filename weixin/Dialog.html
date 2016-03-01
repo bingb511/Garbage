@@ -4,19 +4,28 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-<title>Examples</title>
+<title>Dialog</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link rel="stylesheet" href="weui.min.css" />
-<link rel="stylesheet" href="example.css" />
+<link rel="stylesheet" href="css/weui.min.css" />
+<link rel="stylesheet" href="css/example.css" />
+<style>
+	.bodd{ overflow:hidden; position:relative;height:100%; }
+	.bodd .weui_dialog_confirm{ overflow-x: hidden; overflow-y: auto; }
+	.weui_dialog_confirm{position:fixed;top:0;bottom:0;left:0;right:0;}
+	.weui_mask{position:fixed;top:0;bottom:0;left:0;right:0}
+	.weui_dialog{position:relative;transform: translate(0, 0); top:0; left:0; width:94%; margin: 10px;}
+	/****/
+	.weui_dialog_alert{position:fixed;top:0;bottom:0;left:0;right:0;}
+</style>
 </head>
-<body ontouchstart>
+<body ontouchstart class="bodd">
 
 <div class="container js_container">
 	<div class="page slideIn dialog">
-		<div class="hd">
+		<!-- <div class="hd">
 			<h1 class="page_title">Dialog</h1>
-		</div>
+		</div> -->
 		<div class="bd spacing">
 			<a href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog1">点击弹出Dialog1</a>
 			<a href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog2">点击弹出Dialog2</a>
@@ -27,7 +36,7 @@
 				<div class="weui_dialog_hd">
 					<strong class="weui_dialog_title">弹窗标题</strong>
 				</div>
-				<div class="weui_dialog_bd">自定义弹窗内容，居左对齐显示，告知需要确认的信息等</div>
+				<div class="weui_dialog_bd">弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，告知当前页面信息等弹窗内容弹窗内容，11111111111111111111111告知当前页面信息等弹窗内容22222222222222222222222222</div>
 				<div class="weui_dialog_ft">
 					<a href="javascript:;" class="weui_btn_dialog default">取消</a>
 					<a href="javascript:;" class="weui_btn_dialog primary">确定</a>
@@ -40,7 +49,9 @@
 				<div class="weui_dialog_hd">
 					<strong class="weui_dialog_title">弹窗标题</strong>
 				</div>
-				<div class="weui_dialog_bd">弹窗内容，告知当前页面信息等</div>
+				<div class="weui_dialog_bd">
+					弹窗内容，告知当前页面信息等弹窗内容
+				</div>
 				<div class="weui_dialog_ft">
 					<a href="javascript:;" class="weui_btn_dialog primary">确定</a>
 				</div>
@@ -49,7 +60,7 @@
 
 	</div>
 </div>
-<script src="zepto.min.js"></script>
-<script src="base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/base.js"></script>
 </body>
 </html>
